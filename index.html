@@ -1,0 +1,202 @@
+<html>
+	<head>  Stop watch project 
+<style> 
+body{
+		align-content: center;
+		margin:20px;
+		padding:20px;
+		
+		}
+.kdf{
+	border:double;
+	display:inline-block;
+	background:Grey;
+	width:60px;
+	height:70px;
+	justify-content:center;
+	align-items:center;
+	margin-top:45px;
+	margin-left:12px;
+	text-shadow:2px 2px  white ;
+text-transform:uppercase;
+font-size:30px;
+text-align: center;
+border-radius:10px 10px 10px 10px;
+	}
+	#start{display:inline-block;
+	background:white;
+	width:90px;
+	height:60px;
+	font-style:bold;
+	border-radius:10px 20px 30px 50px;
+	margin-top:10px;
+	text-shadow:2px 2px red;
+	text-transform:uppercase;
+	font-size:15px;
+	margin-left:14px;
+		}
+		#stop{display:inline-block;
+	background:wheat;
+	width:90px;
+	height:60px;
+	border-radius:10px 20px 30px 50px;
+	margin-left:16px;
+	margin-top:10px;
+	text-decoration-thickness:25%;
+	text-shadow:2px 2px red;
+	text-transform:uppercase;
+	font-size:15px;
+		}
+	
+#Reset{
+	background:Darkwhite;
+	width:90px;
+	height:60px;
+	border-radius:10px 20px 30px 50px;
+	margin-left:16px;
+	margin-top:10px;
+text-shadow:2px 2px red;
+text-transform:uppercase;
+font-size:15px;
+		}
+		#container
+		{background:white;
+		box-shadow:20px 10px 10px skyblue,
+ 10px 20px 10px 50px skyblue;
+	width:351px;
+	height:320px;
+	border-radius:30% 70% 70% 30% / 30% 30% 70% 70% ;
+	}
+	#img{
+		border-radius:50%;
+		width:120;
+		height:120;
+		border-radius:30% 80% 60% 30% / 30% 30% 70% 50% ;
+	margin-top:5px;
+	margin-left:70px;
+		}
+	
+			}
+	
+	script{ background:pink;
+		}
+	
+	#start:hover{ background-color:grey;
+		}
+		#stop:hover{ background-color:grey;
+		}
+		#reset:hover{ background-color:grey;
+		}
+#footer
+{
+	font-size:30px;
+	font-family:cursive;
+	text-decoration: underline wavy blue 5px;
+	text-shadow:0 0 3px #FF0000, 0 0 5px #0000FF;
+}
+#footter
+{
+	font-size:30px;
+	font-family:cursive;
+	text-decoration: underline double blue 5px;
+	text-shadow:2px 2px 4px red;
+	}
+	#bro{ text-shadow:20px 10px red;
+		}
+	
+</style>
+</head>
+	<body> <footer id ="footer">Komal dwivedi</footer>
+		<div id ="container">
+		<div class="kdf" id ="hr">00</div>
+		<div class="kdf" id ="min">00</div>
+		<div class="kdf" id ="sec">00</div>
+		<div class="kdf" id ="count">00</div>
+		
+		<div>
+		<button  id ="start"onclick ="start()">Start</button>
+		<button  id ="stop"onclick ="stop()">Stop</button>
+		<button  id ="reset"onclick ="reset()">Reset</button></div>
+		
+		
+</div>
+<footer id ="footter">KDF</footer><br><br><br><br>
+
+<br>
+
+<br><br>
+
+		</body>
+		<script> 
+			
+			
+		let hr=0;
+		let min=0;
+		let sec=0;
+		let count=0;
+		let timer=false;
+		
+		function start()
+		{ timer=true;
+		stopwatch();
+			}
+		function stop()
+		{timer=false;
+			}
+		
+		function reset()
+		{timer=false;
+			hr=0;
+		 min=0;
+		sec=0;
+		count=0;
+			document.getElementById("hr").innerHTML="00";
+document.getElementById("min").innerHTML="00";
+document.getElementById("sec").innerHTML="00";
+			document.getElementById("count").innerHTML="00";
+			}
+		function stopwatch()
+		{
+			if(timer== true){
+			count=count+1;
+			if (count==100)
+			{sec=sec+1;
+			count=0;}
+if (sec==60)
+{
+	min=min+1;
+	sec=0;}
+	if (min==60)
+{
+	hr=hr+1;
+	min=0;
+sec=0;}
+let hrString=hr;
+let minString=min;
+let secString=sec;
+let countString=count;
+if (hr<10)
+{hrString="0"+hrString;
+	}
+	if (min<10)
+{ minString="0"+minString;
+	}
+	if (sec<10)
+{secString="0"+secString;
+	}
+	if (count<10)
+{countString="0"+countString;
+	}
+			
+			document.getElementById("hr").innerHTML=hrString;
+document.getElementById("min").innerHTML=minString;
+document.getElementById("sec").innerHTML=secString;
+			document.getElementById("count").innerHTML=countString;
+				setTimeout("stopwatch()",10)
+			}
+		}
+			
+		 
+			
+			</script>
+</html
